@@ -20,11 +20,10 @@ const users2 = [
 	{id:3, name: 'Pedro'},
 	{id:4, name: 'Amanda'}
 ];
-const newUsers2 = users2.map(item => item);
-newUsers2.forEach(element => {
-    if (element.name.charAt(0) === 'A'){
-        element.name = 'Anacleto';
-    }
+const newUsers2 = users2.map(item => {
+    if (item.name.charAt(0) === 'A'){
+        item.name = 'Anacleto';}
+    return item
 });
 console.log(newUsers2)
 
@@ -38,11 +37,10 @@ const cities = [
 	{isVisited:true, name: 'Amsterdam'}, 
 	{isVisited:false, name: 'Seul'}
 ];
-
-const newCities = cities.map(items => items);
-newCities.forEach(element => {
-    if (element.isVisited === true){
-        element.name += ' (Visitado)' ;
+const newCities = cities.map(items => {
+    if (items.isVisited === true){
+        items.name += ' (Visitado)' ;
     }
+    return items;
 });
 console.log(newCities)
