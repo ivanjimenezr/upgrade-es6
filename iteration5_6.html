@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="iteration5.js" defer></script> -->
+</head>
+<body>
+    <input class="value" type="text" data-function="toFilterStreamers"/>
+
+    <script>
+        const streamers = [
+            {name: 'Rubius', age: 32, gameMorePlayed: 'Minecraft'},
+            {name: 'Ibai', age: 25, gameMorePlayed: 'League of Legends'}, 
+            {name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},
+            {name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
+        ];
+        let capInput = document.querySelector("input")
+        let datos = ''
+        function handleInput(event) {
+            datos = datos+event.data;
+            console.log(datos)
+            let streamerFind = streamers.filter(letras => letras.name.toLowerCase().includes(datos));
+            console.log(streamerFind)
+        }
+        capInput.addEventListener('input',handleInput);
+    </script>
+</body>
+</html>
